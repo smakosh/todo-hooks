@@ -7,7 +7,8 @@ const Task = ({ title, onClick, isDone, color }) => (
             className={Card}
             style={{
                 background: color === 'light' ? '#fff' : '#212121',
-                color: color === 'light' ? '#212121' : '#fff'
+                color: color === 'light' ? '#212121' : '#fff',
+                opacity: isDone && '.4'
             }}
         >
             <h2
