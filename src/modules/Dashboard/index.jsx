@@ -12,9 +12,9 @@ const useInputValue = initial => {
 	};
 };
 
-const Dashboard = ({ tasks, dispatch }) => {
+const Dashboard = () => {
 	const { resetValue, ...task } = useInputValue("");
-	const { theme, toggleTheme } = useContext(Context);
+	const { theme, toggleTheme, tasks, dispatch } = useContext(Context);
 
 	const createTask = e => {
 		e.preventDefault();
@@ -38,10 +38,7 @@ const Dashboard = ({ tasks, dispatch }) => {
 		<Container className={Wrapper}>
 			<Button
 				type="button"
-				onClick={() => {
-					if (theme === "light") toggleTheme("dark");
-					else toggleTheme("light");
-				}}
+				onClick={() => toggleTheme({ type: "TOGGLE_THEME" })}
 			>
 				Toggle theme
 			</Button>
